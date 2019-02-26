@@ -13,6 +13,8 @@ import java.util.*;
  
 public class ParserCAML {
 	ArrayList<Integer> valoresClaves = new ArrayList<Integer>();
+	Integer articleTimes = 0;
+	Integer articleErrors = 0;
 } 
 
 PARSER_END(ParserCAML)
@@ -36,90 +38,14 @@ void hr():
 {}
 {
   (book() | article() | booklet() | conference() | inbook() | incollection() | inproceedings() | manual() | masterthesis() |
-  misc() | phdthesis() | proceedings() | techreport() | unpublished())*
-}
-
-void parameter():
-{}
-{	
-    ("'"(< BASICTYPE > | agregarParametroArreglo())
-|    ("(" "'"(< BASICTYPE > | agregarParametroArreglo()) ("," "'"(< BASICTYPE > | agregarParametroArreglo()))*)")")
-}
-
-void agregarParametroArreglo():
-{
-	Token token;
-}	
-{
-  (token = < NAME >)
- {
-	parametros.add(token.toString());
- }
-}
-
-void buscadorTokenArregloNuevos():
-{
-  Token token;
-}
-{
-  (token = < NAME >)
-	{
-	  for(String tokensito: nombresNuevos)
-	  {
-	    if(tokensito.equals(token.toString()))
-	 	{
-	    	return;
-	  	}
-	  }
-	}
-}
-
-void buscadorTokenArregloParameter():
-{
-  Token token;
-}
-{
-  (token = < NAME >)
-  {
-	  for(String tokensito: parametros)
-	  {
-	    if(tokensito.equals(token.toString()))
-	 	{
-	    	return;
-	  	}
-	  }
+  misc() | phdthesis() | proceedings() | techreport() | unpublished())* {
+	
   }
 }
 
-void tipo():
-{}
-{
-  < BASICTYPE > | buscadorTokenArregloNuevos() | buscadorTokenArregloParameter()
+void book() {
+  
 }
-
-void sum():
-{
-}
-{
-  "{" < ATRIBUTE >":" tipo() (";"< ATRIBUTE >":" tipo())* "}"
-}
-
-//void product():
-//{
-//}
-//{
-//  
-//}
-
-void newName():
-{
-	Token token;
-}
-{
-	(token = < NAME >)
-	{
-		nombresNuevos.add(token.toString());
-	}
 }
 
 
