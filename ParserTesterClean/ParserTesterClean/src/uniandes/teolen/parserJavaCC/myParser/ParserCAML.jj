@@ -1,0 +1,125 @@
+/**
+ * JavaCC file
+ */
+ 
+options {
+  IGNORE_CASE = false;
+  STATIC = false;
+}
+PARSER_BEGIN(ParserCAML)
+package uniandes.teolen.parserJavaCC.myParser;
+
+import java.util.*;
+ 
+public class ParserCAML {
+	ArrayList<Integer> valoresClaves = new ArrayList<Integer>();
+} 
+
+PARSER_END(ParserCAML)
+
+SKIP :
+{
+ 	" " | "\r" | "\t" | "\n"
+}
+
+TOKEN : /* OPERATORS */
+{
+    < INICIO: "type">
+|     < #MINUSCULA: ["a" - "z"] >
+| 	  < #MAYUSCULA: ["A" - "Z"] >
+|     < NAME: (< MAYUSCULA >)(< MAYUSCULA > | < MINUSCULA >|"_"|".")*>
+|     < ID: (< NAME > | ["0"-"9"])*>
+| 	  < ATRIBUTE: < MAYUSCULA >(< MINUSCULA >|<  MAYUSCULA >)* >
+}
+
+void hr():
+{}
+{
+  (book() | article() | booklet() | conference() | inbook() | incollection() | inproceedings() | manual() | masterthesis() |
+  misc() | phdthesis() | proceedings() | techreport() | unpublished())*
+}
+
+void parameter():
+{}
+{	
+    ("'"(< BASICTYPE > | agregarParametroArreglo())
+|    ("(" "'"(< BASICTYPE > | agregarParametroArreglo()) ("," "'"(< BASICTYPE > | agregarParametroArreglo()))*)")")
+}
+
+void agregarParametroArreglo():
+{
+	Token token;
+}	
+{
+  (token = < NAME >)
+ {
+	parametros.add(token.toString());
+ }
+}
+
+void buscadorTokenArregloNuevos():
+{
+  Token token;
+}
+{
+  (token = < NAME >)
+	{
+	  for(String tokensito: nombresNuevos)
+	  {
+	    if(tokensito.equals(token.toString()))
+	 	{
+	    	return;
+	  	}
+	  }
+	}
+}
+
+void buscadorTokenArregloParameter():
+{
+  Token token;
+}
+{
+  (token = < NAME >)
+  {
+	  for(String tokensito: parametros)
+	  {
+	    if(tokensito.equals(token.toString()))
+	 	{
+	    	return;
+	  	}
+	  }
+  }
+}
+
+void tipo():
+{}
+{
+  < BASICTYPE > | buscadorTokenArregloNuevos() | buscadorTokenArregloParameter()
+}
+
+void sum():
+{
+}
+{
+  "{" < ATRIBUTE >":" tipo() (";"< ATRIBUTE >":" tipo())* "}"
+}
+
+//void product():
+//{
+//}
+//{
+//  
+//}
+
+void newName():
+{
+	Token token;
+}
+{
+	(token = < NAME >)
+	{
+		nombresNuevos.add(token.toString());
+	}
+}
+
+
