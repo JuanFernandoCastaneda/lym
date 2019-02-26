@@ -4,173 +4,142 @@ package uniandes.teolen.parserJavaCC.myParser;
 import java.util.*;
 
 public class ParserCAML implements ParserCAMLConstants {
-
-        ArrayList<String> nombresNuevos = new ArrayList<String >();
-        ArrayList<String > parametros = new ArrayList< String>();
+        ArrayList<Integer> valoresClaves = new ArrayList<Integer>();
+        Integer articleTimes = 0;
+        Integer articleErrors = 0;
 
   final public void hr() throws ParseException {
-    jj_consume_token(INICIO);
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 13:
-    case 14:
-      parameter();
-      break;
-    default:
-      jj_la1[0] = jj_gen;
-      ;
-    }
-    newName();
-    jj_consume_token(11);
-    sum();
-    jj_consume_token(12);
-  }
-
-  final public void parameter() throws ParseException {
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case 13:
-      jj_consume_token(13);
+    label_1:
+    while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case BASICTYPE:
-        jj_consume_token(BASICTYPE);
+      case 11:
+        ;
         break;
-      case NAME:
-        agregarParametroArreglo();
+      default:
+        jj_la1[0] = jj_gen;
+        break label_1;
+      }
+      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
+      case 11:
+        book();
+        break;
+        article();
+        break;
+        booklet();
+        break;
+        conference();
+        break;
+        inbook();
+        break;
+        incollection();
+        break;
+        inproceedings();
+        break;
+        manual();
+        break;
+        masterthesis();
+        break;
+        misc();
+        break;
+        phdthesis();
+        break;
+        proceedings();
+        break;
+        techreport();
+        break;
+        unpublished();
         break;
       default:
         jj_la1[1] = jj_gen;
         jj_consume_token(-1);
         throw new ParseException();
       }
-      break;
-    case 14:
-      jj_consume_token(14);
-      jj_consume_token(13);
-      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case BASICTYPE:
-        jj_consume_token(BASICTYPE);
-        break;
-      case NAME:
-        agregarParametroArreglo();
-        break;
-      default:
-        jj_la1[2] = jj_gen;
-        jj_consume_token(-1);
-        throw new ParseException();
-      }
-      label_1:
-      while (true) {
-        switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-        case 15:
-          ;
-          break;
-        default:
-          jj_la1[3] = jj_gen;
-          break label_1;
-        }
-        jj_consume_token(15);
-        jj_consume_token(13);
-        switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-        case BASICTYPE:
-          jj_consume_token(BASICTYPE);
-          break;
-        case NAME:
-          agregarParametroArreglo();
-          break;
-        default:
-          jj_la1[4] = jj_gen;
-          jj_consume_token(-1);
-          throw new ParseException();
-        }
-      }
-      jj_consume_token(16);
-      break;
-    default:
-      jj_la1[5] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
     }
+        valoresClaves.add(articleTimes);
   }
 
-  final public void agregarParametroArreglo() throws ParseException {
-        Token token;
-    token = jj_consume_token(NAME);
-        parametros.add(token.toString());
+  final public void book() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
-  final public void buscadorTokenArregloNuevos() throws ParseException {
-  Token token;
-    token = jj_consume_token(NAME);
-          for(String tokensito: nombresNuevos)
-          {
-            if(tokensito.equals(token.toString()))
-                {
-                {if (true) return;}
-                }
-          }
+  final public void article() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
-  final public void buscadorTokenArregloParameter() throws ParseException {
-  Token token;
-    token = jj_consume_token(NAME);
-          for(String tokensito: parametros)
-          {
-            if(tokensito.equals(token.toString()))
-                {
-                {if (true) return;}
-                }
-          }
+  final public void booklet() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
-  final public void tipo() throws ParseException {
-    switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-    case BASICTYPE:
-      jj_consume_token(BASICTYPE);
-      break;
-    case NAME:
-      buscadorTokenArregloNuevos();
-      break;
-      buscadorTokenArregloParameter();
-      break;
-    default:
-      jj_la1[6] = jj_gen;
-      jj_consume_token(-1);
-      throw new ParseException();
-    }
+  final public void conference() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
-  final public void sum() throws ParseException {
-    jj_consume_token(17);
-    jj_consume_token(ATRIBUTE);
-    jj_consume_token(18);
-    tipo();
-    label_2:
-    while (true) {
-      switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 19:
-        ;
-        break;
-      default:
-        jj_la1[7] = jj_gen;
-        break label_2;
-      }
-      jj_consume_token(19);
-      jj_consume_token(ATRIBUTE);
-      jj_consume_token(18);
-      tipo();
-    }
-    jj_consume_token(20);
+  final public void inbook() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
-//void product():
-//{
-//}
-//{
-//  
-//}
-  final public void newName() throws ParseException {
-        Token token;
-    token = jj_consume_token(NAME);
-                nombresNuevos.add(token.toString());
+  final public void incollection() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void inproceedings() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void manual() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void masterthesis() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void misc() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void phdthesis() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void proceedings() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void techreport() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
+  }
+
+  final public void unpublished() throws ParseException {
+    jj_consume_token(11);
+    jj_consume_token(ID);
+    jj_consume_token(12);
   }
 
   /** Generated Token Manager. */
@@ -182,13 +151,13 @@ public class ParserCAML implements ParserCAMLConstants {
   public Token jj_nt;
   private int jj_ntk;
   private int jj_gen;
-  final private int[] jj_la1 = new int[8];
+  final private int[] jj_la1 = new int[2];
   static private int[] jj_la1_0;
   static {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x6000,0x300,0x300,0x8000,0x300,0x6000,0x300,0x80000,};
+      jj_la1_0 = new int[] {0x800,0x800,};
    }
 
   /** Constructor with InputStream. */
@@ -202,7 +171,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -216,7 +185,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Constructor. */
@@ -226,7 +195,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -236,7 +205,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Constructor with generated Token Manager. */
@@ -245,7 +214,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   /** Reinitialise. */
@@ -254,7 +223,7 @@ public class ParserCAML implements ParserCAMLConstants {
     token = new Token();
     jj_ntk = -1;
     jj_gen = 0;
-    for (int i = 0; i < 8; i++) jj_la1[i] = -1;
+    for (int i = 0; i < 2; i++) jj_la1[i] = -1;
   }
 
   private Token jj_consume_token(int kind) throws ParseException {
@@ -305,12 +274,12 @@ public class ParserCAML implements ParserCAMLConstants {
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[21];
+    boolean[] la1tokens = new boolean[13];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
     }
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 2; i++) {
       if (jj_la1[i] == jj_gen) {
         for (int j = 0; j < 32; j++) {
           if ((jj_la1_0[i] & (1<<j)) != 0) {
@@ -319,7 +288,7 @@ public class ParserCAML implements ParserCAMLConstants {
         }
       }
     }
-    for (int i = 0; i < 21; i++) {
+    for (int i = 0; i < 13; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

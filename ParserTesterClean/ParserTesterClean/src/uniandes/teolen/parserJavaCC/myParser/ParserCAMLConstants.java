@@ -19,7 +19,7 @@ public interface ParserCAMLConstants {
   /** RegularExpression Id. */
   int NAME = 8;
   /** RegularExpression Id. */
-  int BASICTYPE = 9;
+  int ID = 9;
   /** RegularExpression Id. */
   int ATRIBUTE = 10;
 
@@ -37,18 +37,10 @@ public interface ParserCAMLConstants {
     "<MINUSCULA>",
     "<MAYUSCULA>",
     "<NAME>",
-    "<BASICTYPE>",
+    "<ID>",
     "<ATRIBUTE>",
-    "\"=\"",
-    "\";;\"",
-    "\"\\\'\"",
-    "\"(\"",
+    "\"@book{\"",
     "\",\"",
-    "\")\"",
-    "\"{\"",
-    "\":\"",
-    "\";\"",
-    "\"}\"",
   };
 
 }
