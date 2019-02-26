@@ -56,6 +56,7 @@ public class ParserCAML implements ParserCAMLConstants {
       }
     }
         valoresClaves.add(articleTimes);
+        valoresClaves.add(articleErros);
   }
 
   final public void book() throws ParseException {
