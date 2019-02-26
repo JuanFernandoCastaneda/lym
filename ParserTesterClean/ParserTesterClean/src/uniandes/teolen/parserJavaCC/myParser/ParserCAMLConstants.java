@@ -41,6 +41,19 @@ public interface ParserCAMLConstants {
     "<ATRIBUTE>",
     "\"@book{\"",
     "\",\"",
+    "\"@article{\"",
+    "\"@booklet{\"",
+    "\"@conference{\"",
+    "\"@inbook{\"",
+    "\"@incollection{\"",
+    "\"@inproceedings{\"",
+    "\"@manual{\"",
+    "\"@masterthesis{\"",
+    "\"@misc{\"",
+    "\"@phdthesis{\"",
+    "\"@proceedigns{\"",
+    "\"@techreport{\"",
+    "\"@unpublished{\"",
   };
 
 }

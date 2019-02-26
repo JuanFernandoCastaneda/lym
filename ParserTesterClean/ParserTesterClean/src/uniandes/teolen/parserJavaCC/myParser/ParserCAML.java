@@ -13,6 +13,19 @@ public class ParserCAML implements ParserCAMLConstants {
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
       case 11:
+      case 13:
+      case 14:
+      case 15:
+      case 16:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+      case 21:
+      case 22:
+      case 23:
+      case 24:
+      case 25:
         ;
         break;
       default:
@@ -23,30 +36,43 @@ public class ParserCAML implements ParserCAMLConstants {
       case 11:
         book();
         break;
+      case 13:
         article();
         break;
+      case 14:
         booklet();
         break;
+      case 15:
         conference();
         break;
+      case 16:
         inbook();
         break;
+      case 17:
         incollection();
         break;
+      case 18:
         inproceedings();
         break;
+      case 19:
         manual();
         break;
+      case 20:
         masterthesis();
         break;
+      case 21:
         misc();
         break;
+      case 22:
         phdthesis();
         break;
+      case 23:
         proceedings();
         break;
+      case 24:
         techreport();
         break;
+      case 25:
         unpublished();
         break;
       default:
@@ -66,79 +92,79 @@ public class ParserCAML implements ParserCAMLConstants {
   }
 
   final public void article() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(13);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void booklet() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(14);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void conference() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(15);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void inbook() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(16);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void incollection() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(17);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void inproceedings() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(18);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void manual() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(19);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void masterthesis() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(20);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void misc() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(21);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void phdthesis() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(22);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void proceedings() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(23);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void techreport() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(24);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
 
   final public void unpublished() throws ParseException {
-    jj_consume_token(11);
+    jj_consume_token(25);
     jj_consume_token(ID);
     jj_consume_token(12);
   }
@@ -158,7 +184,7 @@ public class ParserCAML implements ParserCAMLConstants {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x800,0x800,};
+      jj_la1_0 = new int[] {0x3ffe800,0x3ffe800,};
    }
 
   /** Constructor with InputStream. */
@@ -275,7 +301,7 @@ public class ParserCAML implements ParserCAMLConstants {
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[13];
+    boolean[] la1tokens = new boolean[26];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -289,7 +315,7 @@ public class ParserCAML implements ParserCAMLConstants {
         }
       }
     }
-    for (int i = 0; i < 13; i++) {
+    for (int i = 0; i < 26; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

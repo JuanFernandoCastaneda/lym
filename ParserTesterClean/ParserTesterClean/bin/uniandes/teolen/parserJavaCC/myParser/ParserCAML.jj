@@ -53,66 +53,67 @@ void book():
 void article():
 { }
 {
-	"@book{" < ID > "," 
+	"@article{" < ID > "," 
 } 
 void booklet():
 { }
 {
-	"@book{" < ID > "," 
+	"@booklet{" < ID > "," 
 }
 void conference():
 { }
 {
-	"@book{" < ID > "," 
+	"@conference{" < ID > "," 
 }
 void inbook():
 { }
 {
-	"@book{" < ID > "," 
-}void incollection():
+	"@inbook{" < ID > "," 
+}
+void incollection():
 { }
 {
-	"@book{" < ID > "," 
+	"@incollection{" < ID > "," 
 }
 void inproceedings():
 { }
 {
-	"@book{" < ID > "," 
+	"@inproceedings{" < ID > "," 
 }
 void manual():
 { }
 {
-	"@book{" < ID > "," 
+	"@manual{" < ID > "," 
 }
 void masterthesis():
 { }
 {
-	"@book{" < ID > "," 
+	"@masterthesis{" < ID > "," 
 }
 void misc():
 { }
 {
-	"@book{" < ID > "," 
+	"@misc{" < ID > "," 
 }
 void phdthesis():
 { }
 {
-	"@book{" < ID > "," 
+	"@phdthesis{" < ID > "," 
 }
 void proceedings():
 { }
 {
-	"@book{" < ID > "," 
+	"@proceedigns{" < ID > "," 
 }
 void techreport():
 { }
 {
-	"@book{" < ID > "," 
+	"@techreport{" < ID > "," 
 }
 void unpublished():
 { }
 {
-	"@book{" < ID > "," 
+	"@unpublished{" < ID > "," 
 }
 
 
