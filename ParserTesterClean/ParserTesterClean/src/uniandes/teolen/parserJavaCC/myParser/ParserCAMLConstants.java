@@ -21,7 +21,9 @@ public interface ParserCAMLConstants {
   /** RegularExpression Id. */
   int ID = 9;
   /** RegularExpression Id. */
-  int ATRIBUTE = 10;
+  int YEAR = 10;
+  /** RegularExpression Id. */
+  int ATRIBUTE = 11;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -38,11 +40,12 @@ public interface ParserCAMLConstants {
     "<MAYUSCULA>",
     "<NAME>",
     "<ID>",
+    "<YEAR>",
     "<ATRIBUTE>",
-    "\"@book{\"",
+    "\"@article{\"",
     "\",\"",
     "\"}\"",
-    "\"@article{\"",
+    "\"@book{\"",
     "\"@booklet{\"",
     "\"@conference{\"",
     "\"@inbook{\"",

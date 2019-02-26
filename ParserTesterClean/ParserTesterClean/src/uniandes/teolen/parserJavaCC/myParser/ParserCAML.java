@@ -38,8 +38,7 @@ public class ParserCAML implements ParserCAMLConstants {
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 11:
-      case 14:
+      case 12:
       case 15:
       case 16:
       case 17:
@@ -52,6 +51,7 @@ public class ParserCAML implements ParserCAMLConstants {
       case 24:
       case 25:
       case 26:
+      case 27:
         ;
         break;
       default:
@@ -59,46 +59,46 @@ public class ParserCAML implements ParserCAMLConstants {
         break label_1;
       }
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 11:
+      case 15:
         book();
         break;
-      case 14:
+      case 12:
         article();
         break;
-      case 15:
+      case 16:
         booklet();
         break;
-      case 16:
+      case 17:
         conference();
         break;
-      case 17:
+      case 18:
         inbook();
         break;
-      case 18:
+      case 19:
         incollection();
         break;
-      case 19:
+      case 20:
         inproceedings();
         break;
-      case 20:
+      case 21:
         manual();
         break;
-      case 21:
+      case 22:
         masterthesis();
         break;
-      case 22:
+      case 23:
         misc();
         break;
-      case 23:
+      case 24:
         phdthesis();
         break;
-      case 24:
+      case 25:
         proceedings();
         break;
-      case 25:
+      case 26:
         techreport();
         break;
-      case 26:
+      case 27:
         unpublished();
         break;
       default:
@@ -137,102 +137,104 @@ public class ParserCAML implements ParserCAMLConstants {
         valoresClaves.add(unpublishedErrors);
   }
 
-  final public void book() throws ParseException {
-    jj_consume_token(11);
-    jj_consume_token(ID);
+  final public void article() throws ParseException {
     jj_consume_token(12);
+    jj_consume_token(ID);
     jj_consume_token(13);
+    jj_consume_token(14);
+                articleTimes++;
   }
 
-  final public void article() throws ParseException {
-    jj_consume_token(14);
+  final public void book() throws ParseException {
+    jj_consume_token(15);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
+                bookTimes++;
   }
 
   final public void booklet() throws ParseException {
-    jj_consume_token(15);
+    jj_consume_token(16);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void conference() throws ParseException {
-    jj_consume_token(16);
+    jj_consume_token(17);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void inbook() throws ParseException {
-    jj_consume_token(17);
+    jj_consume_token(18);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void incollection() throws ParseException {
-    jj_consume_token(18);
+    jj_consume_token(19);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void inproceedings() throws ParseException {
-    jj_consume_token(19);
+    jj_consume_token(20);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void manual() throws ParseException {
-    jj_consume_token(20);
+    jj_consume_token(21);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void masterthesis() throws ParseException {
-    jj_consume_token(21);
+    jj_consume_token(22);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void misc() throws ParseException {
-    jj_consume_token(22);
+    jj_consume_token(23);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void phdthesis() throws ParseException {
-    jj_consume_token(23);
+    jj_consume_token(24);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void proceedings() throws ParseException {
-    jj_consume_token(24);
+    jj_consume_token(25);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void techreport() throws ParseException {
-    jj_consume_token(25);
+    jj_consume_token(26);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   final public void unpublished() throws ParseException {
-    jj_consume_token(26);
+    jj_consume_token(27);
     jj_consume_token(ID);
-    jj_consume_token(12);
     jj_consume_token(13);
+    jj_consume_token(14);
   }
 
   /** Generated Token Manager. */
@@ -250,7 +252,7 @@ public class ParserCAML implements ParserCAMLConstants {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x7ffc800,0x7ffc800,};
+      jj_la1_0 = new int[] {0xfff9000,0xfff9000,};
    }
 
   /** Constructor with InputStream. */
@@ -367,7 +369,7 @@ public class ParserCAML implements ParserCAMLConstants {
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[27];
+    boolean[] la1tokens = new boolean[28];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -381,7 +383,7 @@ public class ParserCAML implements ParserCAMLConstants {
         }
       }
     }
-    for (int i = 0; i < 27; i++) {
+    for (int i = 0; i < 28; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

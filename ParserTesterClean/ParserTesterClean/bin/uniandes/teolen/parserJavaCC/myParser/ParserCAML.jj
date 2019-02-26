@@ -57,6 +57,7 @@ TOKEN : /* OPERATORS */
 | 	  < #MAYUSCULA: ["A" - "Z"] >
 |     < NAME: (< MAYUSCULA >)(< MAYUSCULA > | < MINUSCULA >|"_"|".")*>
 |     < ID: (< NAME > | ["0"-"9"])+>
+| 	  < YEAR: ["0"-"9"]  ["0"-"9"]  ["0"-"9"] ["0"-"9"]>
 | 	  < ATRIBUTE: < MAYUSCULA >(< MINUSCULA >|<  MAYUSCULA >)* >
 }
 
@@ -96,17 +97,20 @@ void hr():
   }
 }
 
-void book():
-{ }
-{
-	"@book{" < ID > "," "}" 
-}
-
 void article():
 { }
 {
-	"@article{" < ID > "," "}" 
+	"@article{" < ID > "," "}" {
+		articleTimes++;
+	}
 } 
+void book():
+{ }
+{
+	"@book{" < ID > "," "}" {
+		bookTimes++;
+	}
+}
 void booklet():
 { }
 {
