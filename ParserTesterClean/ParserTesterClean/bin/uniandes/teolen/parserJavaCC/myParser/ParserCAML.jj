@@ -15,6 +15,32 @@ public class ParserCAML {
 	ArrayList<Integer> valoresClaves = new ArrayList<Integer>();
 	Integer articleTimes = 0;
 	Integer articleErrors = 0;
+	Integer bookTimes = 0;
+	Integer bookErrors = 0;
+	Integer bookletTimes = 0;
+	Integer bookletErrors = 0;
+	Integer conferenceTimes = 0;
+	Integer conferenceErrors = 0;
+	Integer inbookTimes = 0;
+	Integer inbookErrors = 0;
+	Integer incollectionTimes = 0;
+	Integer incollectionErrors = 0;
+	Integer inproceedingsTimes = 0;
+	Integer inproceedingsErrors = 0;
+	Integer manualTimes = 0;
+	Integer manualErrors = 0;
+	Integer masterthesisTimes = 0;
+	Integer masterthesisErrors = 0;
+	Integer miscTimes = 0;
+	Integer miscErrors = 0;
+	Integer phdthesisTimes = 0;
+	Integer phdthesisErrors = 0;
+	Integer proceedingsTimes = 0;
+	Integer proceedingsErrors = 0;
+	Integer techreportTimes = 0;
+	Integer techreportErrors = 0;
+	Integer unpublishedTimes = 0;
+	Integer unpublishedErrors = 0;
 } 
 
 PARSER_END(ParserCAML)
@@ -40,80 +66,106 @@ void hr():
   (book() | article() | booklet() | conference() | inbook() | incollection() | inproceedings() | manual() | masterthesis() |
   misc() | phdthesis() | proceedings() | techreport() | unpublished())* {
 	valoresClaves.add(articleTimes);
-	valoresClaves.add(articleErros);
+	valoresClaves.add(articleErrors);
+	valoresClaves.add(bookTimes);
+	valoresClaves.add(bookErrors);
+	valoresClaves.add(bookletTimes);
+	valoresClaves.add(bookletErrors);
+	valoresClaves.add(conferenceTimes);
+	valoresClaves.add(conferenceErrors);
+	valoresClaves.add(inbookTimes);
+	valoresClaves.add(inbookErrors);
+	valoresClaves.add(incollectionTimes);
+	valoresClaves.add(incollectionErrors);
+	valoresClaves.add(inproceedingsTimes);
+	valoresClaves.add(inproceedingsErrors);
+	valoresClaves.add(manualTimes);
+	valoresClaves.add(manualErrors);
+	valoresClaves.add(masterthesisTimes);
+	valoresClaves.add(masterthesisErrors);
+	valoresClaves.add(miscTimes);
+	valoresClaves.add(miscErrors);
+	valoresClaves.add(phdthesisTimes);
+	valoresClaves.add(phdthesisErrors);
+	valoresClaves.add(proceedingsTimes);
+	valoresClaves.add(proceedingsErrors);
+	valoresClaves.add(techreportTimes);
+	valoresClaves.add(techreportErrors);
+	valoresClaves.add(unpublishedTimes);
+	valoresClaves.add(unpublishedErrors);
   }
 }
 
 void book():
 { }
 {
-	"@book{" < ID > "," 
+	"@book{" < ID > "," "}" 
 }
 
 void article():
 { }
 {
-	"@article{" < ID > "," 
+	"@article{" < ID > "," "}" 
 } 
 void booklet():
 { }
 {
-	"@booklet{" < ID > "," 
+	"@booklet{" < ID > "," "}" 
 }
 void conference():
 { }
 {
-	"@conference{" < ID > "," 
+	"@conference{" < ID > "," "}" 
 }
 void inbook():
 { }
 {
-	"@inbook{" < ID > "," 
+	"@inbook{" < ID > "," "}" 
 }
 void incollection():
 { }
 {
-	"@incollection{" < ID > "," 
+	"@incollection{" < ID > "," "}"
 }
 void inproceedings():
 { }
 {
-	"@inproceedings{" < ID > "," 
+	"@inproceedings{" < ID > "," "}" 
 }
 void manual():
 { }
 {
-	"@manual{" < ID > "," 
+	"@manual{" < ID > "," "}" 
 }
 void masterthesis():
 { }
 {
-	"@masterthesis{" < ID > "," 
+	"@masterthesis{" < ID > "," "}" 
 }
 void misc():
 { }
 {
-	"@misc{" < ID > "," 
+	"@misc{" < ID > "," "}" 
 }
 void phdthesis():
 { }
 {
-	"@phdthesis{" < ID > "," 
+	"@phdthesis{" < ID > "," "}" 
 }
 void proceedings():
 { }
 {
-	"@proceedigns{" < ID > "," 
+	"@proceedigns{" < ID > "," "}" 
 }
 void techreport():
 { }
 {
-	"@techreport{" < ID > "," 
+	"@techreport{" < ID > "," "}"
 }
 void unpublished():
 { }
 {
-	"@unpublished{" < ID > "," 
+	"@unpublished{" < ID > "," "}"
 }
 
 
